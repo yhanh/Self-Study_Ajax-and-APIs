@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Weather Api</title>
+  </head>
+  <body>
+    <script>
+      let myKey = "";
+      let city = "Taipei";
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`;
+
+      async function getWeather() {
+        let data = await fetch(url);
+        let dataJson = await data.json();
+        console.log(dataJson);
+      }
+
+      getWeather();
+    </script>
+  </body>
+</html>
